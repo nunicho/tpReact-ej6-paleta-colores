@@ -2,6 +2,8 @@ import ListaColor from "./ListaColor";
 import { Form, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
+
+
 const FormularioColor = () => {
 
   const coloresLocalStorage = JSON.parse(localStorage.getItem('arregloColorKey')) || [];
@@ -27,8 +29,14 @@ const borrarColor = (nombre) =>{
   setArregloColor(arregloModificado)
 }
   return (
+  <article >
+    <div className='d-inline-flex'>
+
+    <h1 className="display-4"> Administrar colores</h1> 
+    <hr />
+    </div>
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form  onSubmit={handleSubmit}>
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
           <Form.Control
             type="text"
@@ -44,6 +52,7 @@ const borrarColor = (nombre) =>{
 
       <ListaColor arregloColor={arregloColor} borrarColor={borrarColor} ></ListaColor>
     </div>
+    </article>
   );
 };
 
