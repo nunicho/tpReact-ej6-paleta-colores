@@ -1,6 +1,7 @@
 import ListaColor from "./ListaColor";
 import { Form, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { GiPaintBucket } from 'react-icons/gi';
 
 
 
@@ -31,7 +32,8 @@ const borrarColor = (nombre) =>{
   return (
   <article >
     <div className='d-inline-flex'>
-
+    <h2 className="display-4 mx-1">
+    < GiPaintBucket className="fs-1" color={color} onChange={updatedColor => setColor(updatedColor)}></GiPaintBucket></h2>
     <h1 className="display-4"> Administrar colores</h1> 
     <hr />
     </div>
