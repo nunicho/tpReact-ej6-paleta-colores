@@ -42,7 +42,7 @@ const borrarColor = (nombre) =>{
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
           <Form.Control
             type="text"
-            placeholder="Ingrese un color ej Blue"
+            placeholder="Ingrese color: ej blue, red, #eda35c..."
             onChange={(e) => setColor(e.target.value)}
             value={color}
           />

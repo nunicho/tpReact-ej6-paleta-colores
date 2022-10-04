@@ -4,5 +4,6 @@
 
 .containerPrincipal{
     background-color: #FA8BFF;
-        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 34%, #2BFF88 60%, #ffffff 100%);
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 34%, #2BFF88 60%, #ffffff 100%);
+    min-height: 100vh;
 }
