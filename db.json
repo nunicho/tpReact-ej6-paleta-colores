@@ -5,10 +5,6 @@
       "id": 1
     },
     {
-      "nombreColor": "blue",
-      "id": 2
-    },
-    {
       "nombreColor": "red",
       "id": 3
     },
@@ -21,12 +17,16 @@
       "id": 5
     },
     {
-      "nombreColor": "green",
-      "id": 6
-    },
-    {
       "nombreColor": "blue",
       "id": 7
+    },
+    {
+      "nombreColor": "naranja",
+      "id": 8
+    },
+    {
+      "nombreColor": "white",
+      "id": 9
     }
   ]
 }

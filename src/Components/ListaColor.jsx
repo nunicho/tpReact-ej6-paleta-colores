@@ -21,9 +21,8 @@ setColores(respuesta)
   return (
     <ListGroup>
         {
-            colores.map((color)=>  <ItemColor key={color.id} nombreColor={color} setColores={setColores}></ItemColor> )
-        }
-     
+            colores.map((color)=>  <ItemColor key={color.id} color={color} setColores={setColores}></ItemColor> )
+        }    
     </ListGroup>
   );
 };

@@ -1,6 +1,6 @@
 import ListaColor from "./ListaColor";
 import { Form, Button } from "react-bootstrap";
-// import { GiPaintBucket } from 'react-icons/gi';
+import { GiPaintBucket } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
 import { creaColorAPI } from "../Components/helpers/queries";
 import Swal from 'sweetalert2'
@@ -33,9 +33,9 @@ const onSubmit = (datos) =>{
   <article >
     
     <div className='d-inline-flex'>
-    {/* <h2 className="display-4 mx-1">
-    < GiPaintBucket className="fs-1" color={color} onChange={updatedColor => setColor(updatedColor)}></GiPaintBucket></h2>
-     */}
+    {<h2 className="display-4 mx-1">
+    < GiPaintBucket className="fs-1" color={nombreColor} onChange={updatedColor => setColor(updatedColor)}></GiPaintBucket></h2>
+    }
     <h1 className="display-4"> Administrar colores</h1> 
     <hr />
     </div>
