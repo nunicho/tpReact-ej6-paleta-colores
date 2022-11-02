@@ -2,11 +2,8 @@
   "colores": [
     {
       "nombreColor": "azul",
+      "codigoHexadecimal": "#0e0a8f",
       "id": 1
-    },
-    {
-      "nombreColor": "red",
-      "id": 3
     },
     {
       "nombreColor": "blue",
@@ -27,6 +24,14 @@
     {
       "nombreColor": "white",
       "id": 9
+    },
+    {
+      "nombreColor": "red",
+      "id": 10
+    },
+    {
+      "nombreColor": "brown",
+      "id": 11
     }
   ]
 }

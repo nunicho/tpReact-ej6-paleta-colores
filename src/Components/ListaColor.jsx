@@ -19,11 +19,14 @@ setColores(respuesta)
 
 
   return (
+    <div>
     <ListGroup>
         {
             colores.map((color)=>  <ItemColor key={color.id} color={color} setColores={setColores}></ItemColor> )
         }    
     </ListGroup>
+
+    </div>
   );
 };
 
