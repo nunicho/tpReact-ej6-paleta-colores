@@ -1,0 +1,28 @@
+{
+  "colores": [
+    {
+      "nombreColor": "azul",
+      "id": 1
+    },
+    {
+      "nombreColor": "blue",
+      "id": 2
+    },
+    {
+      "nombreColor": "red",
+      "id": 3
+    },
+    {
+      "nombreColor": "blue",
+      "id": 4
+    },
+    {
+      "nombreColor": "orange",
+      "id": 5
+    },
+    {
+      "nombreColor": "green",
+      "id": 6
+    }
+  ]
+}

@@ -1,15 +1,56 @@
-import { ListGroup, Button } from "react-bootstrap";
+import { ListGroup} from "react-bootstrap";
 import { FaPaintBrush } from 'react-icons/fa';
+import { borrarColorAPI } from "../Components/helpers/queries";
+import Swal from 'sweetalert2';
 
-const ItemColor = ({nombreColor, borrarColor}) => {
+const ItemColor = ({color, setColores}) => {
+
+
+const borrarColor = () =>{
+Swal.fire({
+  title: '¿Estás seguro? de eliminar el color',
+  text: "No se puede revertir este paso",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Borrar',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    //realizar la consulta a la API
+    borrarColorAPI(color.id).then((respuesta)=>{
+      if(respuesta.status === 200){
+        // actualizar el state productos o la tabla
+      consultarAPI().then((respuesta)=>{
+        console.log(respuesta)
+        setColores(respuesta)
+      })
+      Swal.fire(
+      'Color borrado!',
+      'El color fue correctamente borrado',
+      'success'
+    )
+      } else {
+        Swal.fire(
+      'Se produjo un error',
+      'Pruebe hacer esta operación más tarde',
+      'success'
+     )}
+    })
+  
+  }
+})
+
+  } 
 
     return (
         <ListGroup.Item className="d-flex justify-content-between my-2 border-2">
             <div>
-            <h2 className="fs-1"style={{color:(nombreColor)}}><FaPaintBrush/></h2>
+            <h2 className="fs-1"style={{color:(color)}}><FaPaintBrush/></h2>
             </div>
-            {nombreColor}
-            <Button variant='danger' className="botonBorrar" onClick={()=>borrarColor(nombreColor)}>Borrar</Button>
+            {color}
+            <Button variant="danger" onClick={borrarColor}>Borrar</Button>
         </ListGroup.Item>
     );
 };  

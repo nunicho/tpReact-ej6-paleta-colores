@@ -11,3 +11,5 @@ que permitan guardar un color en el localstorage.
 
 bootstrap.min.css
 react-icons
+sweetalert2
+react-hook-form
