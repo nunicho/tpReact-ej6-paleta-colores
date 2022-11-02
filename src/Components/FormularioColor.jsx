@@ -1,3 +1,4 @@
+import ListaColor from "./ListaColor";
 import { Form, Button } from "react-bootstrap";
 // import { GiPaintBucket } from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
