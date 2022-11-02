@@ -3,35 +3,26 @@
     {
       "nombreColor": "azul",
       "codigoHexadecimal": "#0e0a8f",
+      "codigoRGBRGBA": "rgb(37, 150, 190)",
       "id": 1
     },
     {
-      "nombreColor": "blue",
-      "id": 4
-    },
-    {
-      "nombreColor": "orange",
-      "id": 5
-    },
-    {
-      "nombreColor": "blue",
-      "id": 7
-    },
-    {
-      "nombreColor": "naranja",
-      "id": 8
-    },
-    {
-      "nombreColor": "white",
-      "id": 9
-    },
-    {
       "nombreColor": "red",
-      "id": 10
+      "codigoHexadecimal": "#edfv",
+      "codigoRGBRGBA": "",
+      "id": 2
     },
     {
-      "nombreColor": "brown",
-      "id": 11
+      "nombreColor": "green",
+      "codigoHexadecimal": "#edfv",
+      "codigoRGBRGBA": "",
+      "id": 3
+    },
+    {
+      "nombreColor": "blue",
+      "codigoHexadecimal": "#0e0a8f",
+      "codigoRGBRGBA": "rgb(37, 150, 190)",
+      "id": 4
     }
   ]
 }

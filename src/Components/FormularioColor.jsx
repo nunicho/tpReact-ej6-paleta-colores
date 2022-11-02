@@ -12,6 +12,8 @@ const FormularioColor = () => {
 const {register, handleSubmit, formState:{errors}, reset} = useForm( 
   {defaultValues: {
     nombreColor: "",
+    codigoHexadecimal:"",
+    codigoRGBRGBA:"",
   }});
 
 const onSubmit = (datos) =>{
@@ -42,9 +44,10 @@ const onSubmit = (datos) =>{
     <div>
       <Form  onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3 d-flex" controlId="nuevoNombreColor">
+          
           <Form.Control
             type="text"
-            placeholder="Ingrese color: ej blue, red, #eda35c..."
+            placeholder="Ingrese nombre del color: ej blue, red..."
            {...register('nombreColor', {
            required:'Este dato es obligatorio', 
              minLength: {
@@ -57,6 +60,37 @@ const onSubmit = (datos) =>{
           }       
         })} />
         <Form.Text className="text-danger">{errors.nombreColor?.message}</Form.Text>
+       
+        <Form.Control
+            type="text"
+            placeholder="Ingrese hexadecimal: ej #eda35c..."
+           {...register('codigoHexadecimal', {
+           minLength: {
+            value: 2,
+            message: 'Debe ingresar como mínimo 2 caracteres'
+          },
+          maxLength:{
+            value: 50,
+            message: 'Debe ingresar como máximo 20 caracteres'
+          }       
+        })} />
+        <Form.Text className="text-danger">{errors.codigoHexadecimal?.message}</Form.Text>
+
+        <Form.Control
+            type="text"
+            placeholder="Ingrese hexadecimal: ej rgb(37, 150, 190)..."
+           {...register('codigoRGBRGBA', {
+           minLength: {
+            value: 2,
+            message: 'Debe ingresar como mínimo 2 caracteres'
+          },
+          maxLength:{
+            value: 50,
+            message: 'Debe ingresar como máximo 20 caracteres'
+          }       
+        })} />
+        <Form.Text className="text-danger">{errors.codigoRGBRGBA?.message}</Form.Text>
+
           <Button variant="primary" type="submit">
             Enviar
           </Button>

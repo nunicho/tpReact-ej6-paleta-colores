@@ -50,8 +50,17 @@ Swal.fire({
         <ListGroup.Item className="d-flex justify-content-between my-2 border-2">
             <div>
             <h2 className="fs-1"style={{color:(color.nombreColor)}}><FaPaintBrush/></h2>
-            </div>
             {color.nombreColor}
+            </div>
+            <div>
+            <h2 className="fs-1"style={{color:(color.codigoHexadecimal)}}><FaPaintBrush/></h2>
+            {color.codigoHexadecimal}
+            </div>
+                  <div>
+            <h2 className="fs-1"style={{color:(color.codigoRGBRGBA)}}><FaPaintBrush/></h2>
+            {color.codigoRGBRGBA}
+            </div>
+            
             <Button variant="danger" onClick={borrarColor}>Borrar</Button> 
         </ListGroup.Item>
     );
