@@ -62,6 +62,8 @@ const onSubmit = (datos) =>{
           </Button>
         </Form.Group>
       </Form>
+
+       {<ListaColor></ListaColor>}
       </div>
     </article>
   );

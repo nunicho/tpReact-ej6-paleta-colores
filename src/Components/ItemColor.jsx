@@ -1,6 +1,7 @@
 import { ListGroup} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import { FaPaintBrush } from 'react-icons/fa';
-import { borrarColorAPI } from "../Components/helpers/queries";
+import { consultarAPI, borrarColorAPI } from "../Components/helpers/queries";
 import Swal from 'sweetalert2';
 
 const ItemColor = ({color, setColores}) => {

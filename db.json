@@ -23,6 +23,10 @@
     {
       "nombreColor": "green",
       "id": 6
+    },
+    {
+      "nombreColor": "blue",
+      "id": 7
     }
   ]
 }
