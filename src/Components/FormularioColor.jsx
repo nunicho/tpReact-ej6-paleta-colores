@@ -6,7 +6,7 @@ import { creaColorAPI } from "../Components/helpers/queries";
 import Swal from 'sweetalert2'
 
 
-const FormularioColor = () => {
+const FormularioColor = ({color, setColores}) => {
 
 
 const {register, handleSubmit, formState:{errors}, reset} = useForm( 
