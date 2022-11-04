@@ -1,5 +1,5 @@
 import ListaColor from "./ListaColor";
-import { GiPaintBucket } from 'react-icons/gi';
+// import { GiPaintBucket } from 'react-icons/gi';
 import { Form, Button } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
 import { creaColorAPI } from "../Components/helpers/queries";
@@ -15,6 +15,8 @@ const {register, handleSubmit, formState:{errors}, reset} = useForm(
     codigoHexadecimal:"",
     codigoRGBRGBA:"",
   }});
+
+// inicializar la navegación
 
 const onSubmit = (datos) =>{
   // los datos ya están validados
@@ -32,6 +34,11 @@ const onSubmit = (datos) =>{
     
   })
 }
+
+function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
   <article >
     
@@ -91,7 +98,7 @@ const onSubmit = (datos) =>{
         })} />
         <Form.Text className="text-danger">{errors.codigoRGBRGBA?.message}</Form.Text>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary"  onClick={refreshPage} type="submit">
             Enviar
           </Button>
         </Form.Group>

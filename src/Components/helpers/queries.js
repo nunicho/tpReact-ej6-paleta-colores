@@ -1,7 +1,8 @@
 // archivo que nos sirva para hacer las consultas a la API (json-server)
 
 
-const URL = 'http://localhost:3004/colores' // dirección de Json Server
+//const URL = 'http://localhost:3004/colores' // dirección de Json Server
+const URL = 'http://localhost:4005/apicolor/colores' // dirección de la Base de Datos local
 // const URL = 'http://localhost:4000/apicolores/colores';
 // tipos de peticiones 
 // petición GET que trae todos los colores o un color  

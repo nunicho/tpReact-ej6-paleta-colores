@@ -19,7 +19,7 @@ Swal.fire({
 }).then((result) => {
   if (result.isConfirmed) {
     //realizar la consulta a la API
-    borrarColorAPI(color.id).then((respuesta)=>{
+    borrarColorAPI(color._id).then((respuesta)=>{
       if(respuesta.status === 200){
         // actualizar el state productos o la tabla
       consultarAPI().then((respuesta)=>{

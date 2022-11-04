@@ -10,19 +10,20 @@ const ListaColor = () => {
 
 useEffect  (()=>{
 
+  
 consultarAPI().then((respuesta)=>{
 console.log(respuesta)
 setColores(respuesta)
+
 })
 
 },[])
-
 
   return (
     <div>
     <ListGroup>
         {
-            colores.map((color)=>  <ItemColor key={color.id} color={color} setColores={setColores}></ItemColor> )
+            colores.map((color)=>  <ItemColor key={color._id} color={color} setColores={setColores}></ItemColor> )
         }    
     </ListGroup>
 

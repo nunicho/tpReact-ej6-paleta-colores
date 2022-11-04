@@ -10,7 +10,7 @@ const App = () => {
     <FormularioColor>
 
     </FormularioColor>
-    </Container>
+     </Container>
     
   );
 };
