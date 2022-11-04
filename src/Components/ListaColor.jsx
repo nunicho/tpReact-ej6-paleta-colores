@@ -17,7 +17,7 @@ setColores(respuesta)
 
 })
 
-},[])
+},[colores])
 
   return (
     <div>
