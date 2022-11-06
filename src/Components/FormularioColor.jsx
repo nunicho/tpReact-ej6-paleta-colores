@@ -1,12 +1,12 @@
 import ListaColor from "./ListaColor";
-// import { GiPaintBucket } from 'react-icons/gi';
+import { GiPaintBucket } from 'react-icons/gi';
 import { Form, Button } from "react-bootstrap";
-import { useForm } from 'react-hook-form';
+import { useForm} from 'react-hook-form';
 import { creaColorAPI } from "../Components/helpers/queries";
 import Swal from 'sweetalert2'
 
 
-const FormularioColor = ({color, setColores}) => {
+const FormularioColor = () => {
 
 
 const {register, handleSubmit, formState:{errors}, reset} = useForm( 
@@ -40,18 +40,17 @@ const onSubmit = (datos) =>{
   <article >
     
     <div className='d-inline-flex'>
-    {/* <h2 className="display-4 mx-1">
-    < GiPaintBucket className="fs-1" color={color} onChange={updatedColor => setColor(updatedColor)}></GiPaintBucket></h2> */}
+   <h2 className="display-4 mx-1">
+    < GiPaintBucket className="fs-1" ></GiPaintBucket></h2> 
     <h1 className="display-4"> Administrar colores</h1> 
     <hr />
     </div>
     <div>
       <Form  onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3 d-flex" controlId="nuevoNombreColor">
-          
+        <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
           <Form.Control
             type="text"
-            placeholder="Ingrese nombre del color: ej blue, red..."
+            placeholder="Ingrese nombre del color: ej blue, red..."                     
            {...register('nombreColor', {
            required:'Este dato es obligatorio', 
              minLength: {
