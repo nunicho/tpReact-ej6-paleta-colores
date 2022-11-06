@@ -1,26 +1,12 @@
-// archivo que nos sirva para hacer las consultas a la API (json-server)
 
+const URL = 'http://localhost:4005/apicolor/colores' 
 
-//const URL = 'http://localhost:3004/colores' // dirección de Json Server
-const URL = 'http://localhost:4005/apicolor/colores' // dirección de la Base de Datos local
-// const URL = 'http://localhost:4000/apicolores/colores';
-// tipos de peticiones 
-// petición GET que trae todos los colores o un color  
-// petición POST, crear un color, login 
-// petición DELETE, petición para borrar
-// petición PUT, petición que pide modificar un color
-
-// peticion GET que trae todos los colores
-
-
-// petición GET que trae todos los colores
-export const consultarAPI = async() =>{
+export const consultarAPI = async()=>{
     try{
-
         const respuesta = await fetch (URL);
-        const listaProductos = await respuesta.json();
+        const listaColores = await respuesta.json();
         // console.log(listaProductos)
-        return listaProductos
+        return listaColores
     }catch(error){
         console.log(error)
     }
@@ -44,8 +30,7 @@ export const creaColorAPI = async(color) =>{
 export const borrarColorAPI = async(id) =>{
     try{
         const respuesta = await fetch (`${URL}/${id}`, {
-            method: "DELETE", 
-         
+         method: "DELETE",        
         });
         return respuesta;
     }catch(error){

@@ -1,31 +1,15 @@
 import React from "react";
 import ItemColor from "./ItemColor";
 import ListGroup from "react-bootstrap/ListGroup";
-import { consultarAPI } from '../Components/helpers/queries';
-import { useEffect, useState } from 'react';
-
-const ListaColor = () => {
-
-  const [colores, setColores]=useState([])
 
 
-
-useEffect  (()=>{
-
+const ListaColor = ({color, setColor}) => {
   
-consultarAPI().then((respuesta)=>{
-console.log(respuesta)
-setColores(respuesta)
-
-})
-
-},[])
-
-  return (
+return (
     <div>
     <ListGroup>
         {
-            colores.map((color)=>  <ItemColor key={color._id} color={color} setColores={setColores}></ItemColor> )
+            color.map((color)=>  <ItemColor key={color._id} color={color} setColor={setColor}></ItemColor> )
         }    
     </ListGroup>
 

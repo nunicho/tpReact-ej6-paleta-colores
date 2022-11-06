@@ -1,32 +1,40 @@
 import ListaColor from "./ListaColor";
-import { GiPaintBucket } from 'react-icons/gi';
 import { Form, Button } from "react-bootstrap";
-import { useForm} from 'react-hook-form';
-import { creaColorAPI } from "../Components/helpers/queries";
+import { consultarAPI, creaColorAPI } from "../Components/helpers/queries";
+import { useEffect, useState } from "react";
+import {useForm} from "react-hook-form"
 import Swal from 'sweetalert2'
+import { GiPaintBucket } from 'react-icons/gi';
 
 
 const FormularioColor = () => {
+const [color, setColor]=useState([])
 
+useEffect(() => {
+    consultarAPI().then((respuesta) => {
+      setColor(respuesta);
+    });
+  }, []);
 
-const {register, handleSubmit, formState:{errors}, reset} = useForm( 
-  {defaultValues: {
-    nombreColor: "",
-    codigoHexadecimal:"",
-    codigoRGBRGBA:"",
+//validaciones
+const {register, handleSubmit, formState:{errors}, reset} = useForm({
+    defaultValues: {
+      nombreColor: "",
+      colorHexadecimal:"",
+      colorRGBRGBA:"",
   }});
 
 // inicializar la navegación
 
 const onSubmit = (datos) =>{
-  // los datos ya están validados
-  console.log(datos)
-  // enviar los datos a la api
   creaColorAPI(datos).then((respuesta)=>{
     if(respuesta.status === 201){
       // el producto se creó
       Swal.fire('Color creado', 'El color fue creado correctamente', 'success')
       reset();
+      consultarAPI().then((respuesta) => {
+      setColor(respuesta);
+      });
       }else{
       //mostrar 
       Swal.fire('Color no creado', 'Vuelva a intentar nuevamente', 'error')
@@ -35,15 +43,13 @@ const onSubmit = (datos) =>{
   })
 }
 
-
   return (
   <article >
-    
-    <div className='d-inline-flex'>
-   <h2 className="display-4 mx-1">
-    < GiPaintBucket className="fs-1" ></GiPaintBucket></h2> 
-    <h1 className="display-4"> Administrar colores</h1> 
-    <hr />
+   <div className='d-inline-flex'>
+      <h2 className="display-4 mx-1">
+         < GiPaintBucket className="fs-1" ></GiPaintBucket></h2> 
+       <h1 className="display-4"> Administrar colores</h1> 
+        <hr />
     </div>
     <div>
       <Form  onSubmit={handleSubmit(onSubmit)}>
@@ -59,40 +65,40 @@ const onSubmit = (datos) =>{
           },
           maxLength:{
             value: 50,
-            message: 'Debe ingresar como máximo 20 caracteres'
+            message: 'Debe ingresar como máximo 50 caracteres'
           }       
         })} />
         <Form.Text className="text-danger">{errors.nombreColor?.message}</Form.Text>
        
         <Form.Control
             type="text"
-            placeholder="Ingrese hexadecimal: ej #eda35c..."
-           {...register('codigoHexadecimal', {
+            placeholder="OPCIONAL - Ingrese hexadecimal: ej #eda35c..."
+           {...register('colorHexadecimal', {
            minLength: {
             value: 2,
             message: 'Debe ingresar como mínimo 2 caracteres'
           },
           maxLength:{
             value: 50,
-            message: 'Debe ingresar como máximo 20 caracteres'
+            message: 'Debe ingresar como máximo 50 caracteres'
           }       
         })} />
-        <Form.Text className="text-danger">{errors.codigoHexadecimal?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.colorHexadecimal?.message}</Form.Text>
 
         <Form.Control
             type="text"
-            placeholder="Ingrese hexadecimal: ej rgb(37, 150, 190)..."
-           {...register('codigoRGBRGBA', {
+            placeholder="OPCIONAL - Ingrese hexadecimal: ej rgb(37, 150, 190)..."
+           {...register('colorRGBRGBA', {
            minLength: {
             value: 2,
             message: 'Debe ingresar como mínimo 2 caracteres'
           },
           maxLength:{
             value: 50,
-            message: 'Debe ingresar como máximo 20 caracteres'
+            message: 'Debe ingresar como máximo 50 caracteres'
           }       
         })} />
-        <Form.Text className="text-danger">{errors.codigoRGBRGBA?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.colorRGBRGBA?.message}</Form.Text>
 
           <Button variant="primary"  type="submit">
             Enviar
@@ -100,7 +106,8 @@ const onSubmit = (datos) =>{
         </Form.Group>
       </Form>
 
-       {<ListaColor></ListaColor>}
+       {<ListaColor color={color} setColor={setColor}></ListaColor>}
+      
       </div>
     </article>
   );

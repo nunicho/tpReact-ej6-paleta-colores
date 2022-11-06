@@ -1,11 +1,9 @@
-import { ListGroup} from "react-bootstrap";
-import { Button} from "react-bootstrap";
-import { FaPaintBrush } from 'react-icons/fa';
-import { consultarAPI, borrarColorAPI } from "../Components/helpers/queries";
+import { ListGroup, Button} from "react-bootstrap";
 import Swal from 'sweetalert2';
+import {  borrarColorAPI, consultarAPI } from "../Components/helpers/queries";
+import { FaPaintBrush } from 'react-icons/fa';
 
-const ItemColor = ({color, setColores}) => {
-
+const ItemColor = ({color, setColor}) => {
 const borrarColor = () =>{
 Swal.fire({
   title: '¿Estás seguro? de eliminar el color',
@@ -18,34 +16,28 @@ Swal.fire({
   cancelButtonText: 'Cancelar'
 }).then((result) => {
   if (result.isConfirmed) {
-    //realizar la consulta a la API
     borrarColorAPI(color._id).then((respuesta)=>{
-      if(respuesta.status === 200){
-        // actualizar el state productos o la tabla
-      consultarAPI().then((respuesta)=>{
-        console.log(respuesta)
-        setColores(respuesta)
-      })
+    if (respuesta.status === 200) {
+      consultarAPI().then((respuesta) => {
+        setColor(respuesta);
+    });
+
       Swal.fire(
       'Color borrado!',
       'El color fue correctamente borrado',
       'success'
-    )
+       );
       } else {
         Swal.fire(
       'Se produjo un error',
       'Pruebe hacer esta operación más tarde',
       'success'
-     )}
-    })
-  
-  }
-})
-
-  }
-    
-  
-
+     );
+    }
+    });
+   }
+});
+}
     return (
         <ListGroup.Item className="d-flex justify-content-between my-2 border-2">
             <div>
@@ -53,14 +45,13 @@ Swal.fire({
             {color.nombreColor}
             </div>
             <div>
-            <h2 className="fs-1"style={{color:(color.codigoHexadecimal)}}><FaPaintBrush/></h2>
-            {color.codigoHexadecimal}
+            <h2 className="fs-1"style={{color:(color.colorHexadecimal)}}><FaPaintBrush/></h2>
+            {color.colorHexadecimal}
             </div>
-                  <div>
-            <h2 className="fs-1"style={{color:(color.codigoRGBRGBA)}}><FaPaintBrush/></h2>
-            {color.codigoRGBRGBA}
-            </div>
-            
+            <div>
+            <h2 className="fs-1"style={{color:(color.colorRGBRGBA)}}><FaPaintBrush/></h2>
+            {color.colorRGBRGBA}
+            </div>            
             <Button variant="danger" onClick={borrarColor}>Borrar</Button> 
         </ListGroup.Item>
     );

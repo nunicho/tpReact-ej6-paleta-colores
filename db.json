@@ -2,26 +2,26 @@
   "colores": [
     {
       "nombreColor": "azul",
-      "codigoHexadecimal": "#0e0a8f",
-      "codigoRGBRGBA": "rgb(37, 150, 190)",
+      "colorHexadecimal": "#0e0a8f",
+      "colorRGBRGBA": "rgb(37, 150, 190)",
       "id": 1
     },
     {
       "nombreColor": "red",
-      "codigoHexadecimal": "#edfv",
-      "codigoRGBRGBA": "",
+      "colorHexadecimal": "#edfv",
+      "colorRGBRGBA": "",
       "id": 2
     },
     {
       "nombreColor": "green",
-      "codigoHexadecimal": "#edfv",
-      "codigoRGBRGBA": "",
+      "colorHexadecimal": "#edfv",
+      "colorRGBRGBA": "",
       "id": 3
     },
     {
       "nombreColor": "blue",
-      "codigoHexadecimal": "#0e0a8f",
-      "codigoRGBRGBA": "rgb(37, 150, 190)",
+      "colorHexadecimal": "#0e0a8f",
+      "colorRGBRGBA": "rgb(37, 150, 190)",
       "id": 4
     }
   ]
