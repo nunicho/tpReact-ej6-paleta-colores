@@ -39,7 +39,7 @@ Swal.fire({
 });
 }
     return (
-        <ListGroup.Item className="d-flex justify-content-between my-2 border-2">
+        <ListGroup.Item className="d-flex justify-content-between my-2 border-2 overflow-auto">
             <div>
             <h2 className="fs-1"style={{color:(color.nombreColor)}}><FaPaintBrush/></h2>
             {color.nombreColor}

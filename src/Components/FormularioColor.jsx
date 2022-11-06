@@ -53,7 +53,7 @@ const onSubmit = (datos) =>{
     </div>
     <div>
       <Form  onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="text"
             placeholder="Ingrese nombre del color: ej blue, red..."                     
@@ -100,7 +100,7 @@ const onSubmit = (datos) =>{
         })} />
         <Form.Text className="text-danger">{errors.colorRGBRGBA?.message}</Form.Text>
 
-          <Button variant="primary"  type="submit">
+          <Button variant="primary my-2"  type="submit">
             Enviar
           </Button>
         </Form.Group>
